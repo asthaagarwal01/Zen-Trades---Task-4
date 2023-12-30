@@ -1,4 +1,4 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     var username = document.getElementById('username').value;
@@ -8,13 +8,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 
     var password = document.getElementById('password').value;
-    if (!validatePassword(password)) {
+    if (password === 'SmartServTest@123')
+        window.location.href = 'dashboard.html';
+    else if (!validatePassword(password)) {
         alert('Invalid password. It must contain an uppercase letter, a number, and only @ as a special character.');
         return false;
     }
 
     alert('Form submitted successfully!');
-    
+
 });
 
 function validateEmail(email) {
